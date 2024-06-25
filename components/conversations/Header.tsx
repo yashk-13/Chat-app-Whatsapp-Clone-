@@ -7,10 +7,13 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import { HiChevronLeft } from "react-icons/hi";
 import { HiEllipsisHorizontal } from "react-icons/hi2";
-
 import Avatar from "../Avatar";
 import AvatarGroup from "../AvatarGroup";
 import ProfileDrawer from "./ProfileDrawer";
+import { motion } from "framer-motion";
+import CallButton from "../CallButton";
+import { useRouter } from "next/navigation";
+import axios from "axios";
 
 type Props = {
   conversation: Conversation & {
@@ -20,6 +23,7 @@ type Props = {
 
 function Header({ conversation }: Props) {
   const otherUser = useOtherUser(conversation);
+  const router = useRouter();
   const { members } = useActiveList();
   const isActive = members.indexOf(otherUser?.email!) !== -1;
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -28,9 +32,12 @@ function Header({ conversation }: Props) {
     if (conversation.isGroup) {
       return `${conversation.users.length} Members`;
     }
-
     return isActive ? "Active" : "Offline";
   }, [conversation, isActive]);
+
+  const handleCall = async () => {
+    router.push(`/conversations/${conversation.id}/room`);
+  };
 
   return (
     <>
@@ -59,11 +66,14 @@ function Header({ conversation }: Props) {
             </div>
           </div>
         </div>
-        <HiEllipsisHorizontal
-          size={32}
-          onClick={() => setDrawerOpen(true)}
-          className="text-sky-500 cursor-pointer hover:text-sky-600 transition"
-        />
+        <motion.div className="flex items-center flex-row gap-2">
+          <CallButton onClick={handleCall} />
+          <HiEllipsisHorizontal
+            size={32}
+            onClick={() => setDrawerOpen(true)}
+            className="text-sky-500 cursor-pointer hover:text-sky-600 transition"
+          />
+        </motion.div>
       </div>
     </>
   );

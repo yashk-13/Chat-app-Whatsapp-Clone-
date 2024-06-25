@@ -93,27 +93,27 @@ function ProfileDrawer({ isOpen, onClose, data }: Props) {
                       </div>
                       <div className="relative mt-6 flex-1 px-4 sm:px-6">
                         <div className="flex flex-col items-center">
-                          <div className="mb-2">
+                          <div className="mb-2 ">
                             {data.isGroup ? (
                               <AvatarGroup name={data.name || otherUser.name} />
                             ) : (
                               <Avatar user={otherUser} />
                             )}
                           </div>
-                          <div>{title}</div>
-                          <div className="text-sm text-gray-500 dark:text-gray-300">
+                          <div className="text-2xl font-bold">{title}</div>
+                          <div className="text-md text-gray-500 dark:text-gray-400">
                             {statusText}
                           </div>
                           <div className="flex gap-10 my-8">
                             <div
                               onClick={() => setConfirmOpen(true)}
-                              className="flex flex-col gap-3 items-center cursor-pointer hover:opacity-75"
+                              className="flex flex-row gap-3 items-center justify-start cursor-pointer hover:opacity-75"
                             >
-                              <div className="w-10 h-10 bg-neutral-100 dark:bg-neutral-900 rounded-full flex items-center justify-center">
+                              <div className="w-10 h-10 bg-neutral-100 dark:bg-neutral-900 rounded-full flex items-center justify-center ">
                                 <IoTrash size={20} />
                               </div>
-                              <div className="text-sm font-light text-neutral-600 dark:text-neutral-300">
-                                Delete
+                              <div className="text-md  font-bold  text-neutral-600 dark:text-neutral-300">
+                                Delete chat
                               </div>
                             </div>
                           </div>
@@ -121,7 +121,7 @@ function ProfileDrawer({ isOpen, onClose, data }: Props) {
                             <dl className="space-y-8 px-4 sm:space-y-6 sm:px-6">
                               {data.isGroup && (
                                 <div>
-                                  <dt className="text-sm font-medium text-gray-500 dark:text-gray-300 sm:w-40 sm:flex-shrink-0">
+                                  <dt className="text-md font-medium text-gray-500 dark:text-gray-300 sm:w-40 sm:flex-shrink-0">
                                     Emails
                                   </dt>
                                   <dd className="mt-1 text-sm text-gray-900 dark:text-gray-100 sm:col-span-2">
