@@ -40,7 +40,11 @@ function Form({}: Props) {
   };
 
   return (
-    <div className="py-4 px-4 bg-white dark:bg-black border-t dark:border-t-gray-600 flex items-center gap-2 lg:gap-4 w-full">
+    <div
+      className="py-4 px-4 bg-white dark:bg-neutral-800 border-t dark:border-t-gray-600 flex items-center gap-2 lg:gap-4 w-full      shadow-[0_-15px_30px_-15px_rgba(0,0,0,0.3)] dark:shadow-[0_-15px_30px_-15px_rgba(255,255,255,0.1)]
+
+    "
+    >
       <CldUploadButton
         options={{ maxFiles: 1 }}
         onUpload={handleUpload}

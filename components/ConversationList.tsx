@@ -91,11 +91,11 @@ function ConversationList({ initialItems, users }: Props) {
       />
       <aside
         className={clsx(
-          `fixed inset-y-0 pb-20 lg:pb-0 lg:left-20 lg:w-80 lg:block overflow-y-auto border-r border-gray-200 dark:border-gray-700 dark:bg-black`,
+          `fixed inset-y-0 pb-20 lg:pb-0 lg:left-20 lg:w-80 lg:block overflow-y-auto border-r border-gray-200 dark:border-gray-700 bg-neutral-800`,
           isOpen ? "hidden" : "block w-full left-0"
         )}
       >
-        <div className="px-5">
+        <div className="px-5 rounded-xl m-4 bg-white dark:bg-black">
           <div className="flex justify-between mb-4 pt-4">
             <div className="text-2xl font-bold text-neutral-800 dark:text-neutral-200">
               Messages

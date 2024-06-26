@@ -10,7 +10,7 @@ const CallButton: React.FC<CallButtonProps> = ({ onClick }) => {
     <button onClick={onClick}>
       <MdOutlineWifiCalling3
         size={32}
-        className="text-sky-500 cursor-pointer hover:text-sky-600 transition"
+        className="text-cyan-400 cursor-pointer hover:text-sky-600 transition"
       />
     </button>
   );

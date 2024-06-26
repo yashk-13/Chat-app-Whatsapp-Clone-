@@ -46,7 +46,7 @@ function Header({ conversation }: Props) {
         isOpen={drawerOpen}
         onClose={() => setDrawerOpen(false)}
       />
-      <div className="bg-white dark:bg-black w-full flex border-b-[1px] dark:border-b-gray-600 sm:px-4 py-3 px-4 lg:px-6 justify-between items-center shadow-sm">
+      <div className="bg-white dark:bg-neutral-800 w-full flex border-b-[1px] dark:border-b-gray-600 sm:px-4 py-3 px-4 lg:px-6 justify-between items-center shadow-lg">
         <div className="flex gap-3 items-center">
           <Link
             href="/conversations"
@@ -60,7 +60,9 @@ function Header({ conversation }: Props) {
             <Avatar user={otherUser} />
           )}
           <div className="flex flex-col">
-            <div>{conversation.name || otherUser.name}</div>
+            <div className="font-bold text-xl">
+              {conversation.name || otherUser.name}
+            </div>
             <div className="text-sm font-light text-neutral-500 dark:text-neutral-300">
               {statusText}
             </div>
@@ -71,7 +73,7 @@ function Header({ conversation }: Props) {
           <HiEllipsisHorizontal
             size={32}
             onClick={() => setDrawerOpen(true)}
-            className="text-sky-500 cursor-pointer hover:text-sky-600 transition"
+            className="text-cyan-400 cursor-pointer hover:text-sky-600 transition"
           />
         </motion.div>
       </div>

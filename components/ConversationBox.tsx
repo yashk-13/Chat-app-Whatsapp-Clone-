@@ -66,13 +66,13 @@ function ConversationBox({ data, selected }: Props) {
       initial={{ opacity: 0, scale: 0.5 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{
-        duration: 0.8,
-        delay: 0.5,
+        duration: 0.5,
+        delay: 0.2,
         ease: [0, 0.71, 0.2, 1.01],
       }}
       onClick={handleClick}
       className={clsx(
-        `w-full relative flex items-center space-x-3 p-3 hover:bg-neutral-100 dark:bg-black dark:hover:bg-neutral-900 rounded-lg transition cursor-pointer`,
+        `w-full relative flex items-center space-x-3 p-3 active:bg-cyan-300 hover:bg-cyan-400 dark:bg-black dark:hover:bg-cyan-400 rounded-lg transition cursor-pointer`,
         selected
           ? "bg-neutral-100 dark:bg-neutral-900"
           : "bg-white dark:bg-black"
@@ -84,7 +84,7 @@ function ConversationBox({ data, selected }: Props) {
         <Avatar user={otherUser} />
       )}
       <div className="min-w-0 flex-0">
-        <div className="focus:outline-none">
+        <div className="focus:outline-none active:bg-cyan-400">
           <div className="flex justify-between items-center mb-1">
             <p className="text-md text-gray-900 dark:text-gray-100 font-medium truncate">
               {data.name || otherUser.name}

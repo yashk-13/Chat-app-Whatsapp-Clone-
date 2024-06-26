@@ -23,7 +23,7 @@ function DesktopItem({ label, icon: Icon, href, onClick, active }: Props) {
       <Link
         href={href}
         className={clsx(
-          `group flex gap-x-3 rounded-md p-3 text-sm leading-6 font-semibold text-gray-500 dark:text-gray-200 hover:text-black dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-900`,
+          `group flex gap-3 m-2 rounded-3xl p-3 text-sm leading-6 font-semibold text-gray-500 dark:text-gray-200 hover:text-black dark:hover:text-white hover:bg-neutral-800`,
           active && "bg-gray-100 dark:bg-gray-900 dark:text-white text-black"
         )}
       >
